@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloudflare Pages 演示</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1a1a1a; --muted: #666666; --line: #e5e5e5; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111111; --fg: #f0f0f0; --muted: #999999; --line: #333333; } }
+  body { margin: 0; padding: 48px 16px; background: var(--bg); color: var(--fg); font: 16px/1.7 system-ui, -apple-system, "PingFang SC", sans-serif; }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 24px; font-weight: 500; margin: 0 0 8px; }
+  p { margin: 0 0 12px; color: var(--muted); }
+  table { border-collapse: collapse; width: 100%; margin-top: 24px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  th { font-weight: 500; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cloudflare Pages 自动部署已打通</h1>
+  <p>这个页面由 GitHub 仓库 <code>cf-pages-demo</code> 推送后，Cloudflare Pages 自动构建发布。</p>
+  <table>
+    <tr><th>版本</th><td id="ver">v1</td></tr>
+    <tr><th>构建方式</th><td>纯静态，无构建命令</td></tr>
+    <tr><th>页面加载时间</th><td id="now"></td></tr>
+  </table>
+</main>
+<script>
+  document.getElementById('now').textContent = new Date().toLocaleString('zh-CN');
+</script>
+</body>
+</html>
